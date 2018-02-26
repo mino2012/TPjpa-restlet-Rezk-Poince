@@ -9,15 +9,23 @@ public class Heater extends SmartDevice{
 	
 	private int nbchauffages;
 	private int temperature;
+	private String power;
 
+	public String getPower() {
+		return power;
+	}
+	public void setPower(String power) {
+		this.power = power;
+	}
 	public Heater() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Heater(int nbchauffages,int temperature) {
+	public Heater(int nbchauffages,int temperature,String power) {
 		super();
 		this.nbchauffages= nbchauffages;
 		this.temperature= temperature;
+		this.power=power;
 		// TODO Auto-generated constructor stub
 	}
 	

@@ -10,7 +10,14 @@ public class Home {
 	double taille;
 	int nbpieces;
 	Person person;
+	String name;
 	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	private List<SmartDevice> Appareil = new ArrayList<SmartDevice>();
 	
 	public double getTaille() {
