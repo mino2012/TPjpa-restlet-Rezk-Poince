@@ -1,9 +1,9 @@
-Conception of this project :
+Conception du projet :
 ---
-- pom.xml: used for updating / downloading dependencies
-- class diagram: alt text
-- entities: which represents our classes (tables from / to the database)
-- dao: used for defining CRUD functions
-- jpa dependencies: the use of annotations in classes
-- web.xml: used for tuning and mapping servlets
-- jax / jersey dependencies: used for webservices
+- pom.xml: utilisé pour mettre à jour / télécharger des dépendances
+- Diagramme de classe: TP2
+- Entités: qui représente nos classes (tables de / vers la base de données)
+- DAO: utilisé pour définir les fonctions CRUD
+- JPA: l'utilisation d'annotations dans les classes
+- web.xml: utilisé pour le réglage et le mappage des servlets
+- Dépendances jax / jersey: utilisées pour les services web
