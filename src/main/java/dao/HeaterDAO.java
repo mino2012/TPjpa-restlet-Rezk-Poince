@@ -10,12 +10,9 @@ import domain.Heater;
 public class HeaterDAO implements GenericDao<Heater,Long> {
 
 	public Heater create(Heater t) {
-	     EntityManagerFactory factory = Persistence.createEntityManagerFactory("mysql");
-	        EntityManager manager = factory.createEntityManager();
-	        EntityTransaction transaction = manager.getTransaction();
-	        transaction.begin();
-	        manager.persist(t);
-	        transaction.commit();
+		SingletonEntityManager.getInstance().getTransaction().begin();
+		SingletonEntityManager.getInstance().persist(t);
+		SingletonEntityManager.getInstance().getTransaction().commit();
 
 	        return t;
 	}

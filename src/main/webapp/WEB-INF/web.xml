@@ -9,7 +9,8 @@
 		<init-param>
 			<param-name>com.sun.jersey.config.property.packages</param-name>
 			<param-value>
-				fr.istic.sir.rest
+				<!--fr.istic.sir.rest-->
+				services
 			 </param-value>
 		</init-param>
 				<init-param>

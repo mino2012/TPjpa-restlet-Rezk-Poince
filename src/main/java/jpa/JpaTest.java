@@ -20,30 +20,28 @@ public class JpaTest {
 
         PersonDAO dao = new PersonDAO();
         Person p = new Person();
-        p.setNom("thomas");
-        p.setMail("thomas@gmail.com");
-        p.setPrenom("tata");
-
+        p.setNom("tito");
+        p.setMail("pal@gmail.com");
+        p.setPrenom("paris");
+System.out.println("Salut");
         HomeDAO daoh =new HomeDAO();
         Home home =new Home();
-        home.setNbpieces(5);
-        home.setTaille(20);
+        home.setNbpieces(10);
+        home.setTaille(32);
         
         HeaterDAO hdao= new HeaterDAO();
         Heater heater= new Heater();
-        heater.setNbchauffages(4);
+        heater.setNbchauffages(30);
         heater.setTemperature(20);
         
         ElectronicDeviceDAO edao=new ElectronicDeviceDAO();
         ElectronicDevice device=new ElectronicDevice();
         device.setNbDevice(1);
-        device.setName("alarme");
+        device.setName("test");
         
         home.setPerson(p);
         device.setHome(home);
-        device.setPerson(p);
         heater.setHome(home);
-        heater.setPerson(p);
         dao.create(p);
         daoh.create(home);
         hdao.create(heater);

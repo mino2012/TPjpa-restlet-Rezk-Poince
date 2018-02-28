@@ -10,13 +10,9 @@ import javax.persistence.Persistence;
 public class HomeDAO implements GenericDao<Home,Long>{
 
 	public Home create(Home t) {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("mysql");
-		EntityManager manager = factory.createEntityManager();
-		EntityTransaction transaction = manager.getTransaction();
-		transaction.begin();
-		manager.persist(t);
-		transaction.commit();
-
+		SingletonEntityManager.getInstance().getTransaction().begin();
+		SingletonEntityManager.getInstance().persist(t);
+		SingletonEntityManager.getInstance().getTransaction().commit();
 		return t;
 	}
 

@@ -13,6 +13,16 @@ public class SmartDevice {
     Person person;
     
     
+    public SmartDevice() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public SmartDevice(String name, Home home) {
+		
+		this.name = name;
+		this.home = home;
+		//this.person= person;
+	}
     public Person getPerson() {
 		return person;
 	}
@@ -46,16 +56,7 @@ public class SmartDevice {
 	public void setHome(Home home) {
 		this.home = home;
 	}
-	public SmartDevice() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public SmartDevice(String name, Home home, Person person) {
-		super();
-		this.name = name;
-		this.home = home;
-		this.person= person;
-	}
+	
 
 
 }

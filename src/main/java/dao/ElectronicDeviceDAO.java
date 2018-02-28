@@ -10,12 +10,9 @@ import domain.ElectronicDevice;
 public class ElectronicDeviceDAO implements GenericDao<ElectronicDevice,Long> {
 
 	public ElectronicDevice create(ElectronicDevice t) {
-		 EntityManagerFactory factory = Persistence.createEntityManagerFactory("mysql");
-	        EntityManager manager = factory.createEntityManager();
-	        EntityTransaction transaction = manager.getTransaction();
-	        transaction.begin();
-	        manager.persist(t);
-	        transaction.commit();
+		SingletonEntityManager.getInstance().getTransaction().begin();
+		SingletonEntityManager.getInstance().persist(t);
+		SingletonEntityManager.getInstance().getTransaction().commit();
 
 	        return t;
 	}

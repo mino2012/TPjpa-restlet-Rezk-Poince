@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonManagedReference;
+
 @Entity
 public class Person {
 	
@@ -20,6 +23,21 @@ public class Person {
 	private List<SmartDevice> devices = new ArrayList<SmartDevice>();
 	private List<Person> friends = new ArrayList<Person>();
 	private Long id;
+	
+	public Person(String nom, String prenom, String mail) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.mail = mail;
+		
+		this.residence=new ArrayList<Home>();
+		this.devices=new ArrayList<SmartDevice>();
+		this.friends= new ArrayList<Person>();
+	}
+	public Person() {
+		this.residence=new ArrayList<Home>();
+		this.devices=new ArrayList<SmartDevice>();
+		this.friends= new ArrayList<Person>();
+	}
 	@Id
 	@GeneratedValue
 	public Long getId() {
@@ -51,6 +69,7 @@ public class Person {
 	}
 	@Column(length=100)
 	@OneToMany(mappedBy = "person")
+	@JsonIgnore
 	public List<Home> getResidence() {
 		return residence;
 	}
@@ -66,6 +85,7 @@ public class Person {
 	public void setDevices(List<SmartDevice> devices) {
 		this.devices = devices;
 	}
+	
 	@ManyToMany
     public List<Person> getFriends() {
         return friends;

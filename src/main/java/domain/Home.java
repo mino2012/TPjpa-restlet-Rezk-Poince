@@ -4,21 +4,34 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
+
 @Entity
 public class Home {
+	
 	Long id;
 	double taille;
 	int nbpieces;
 	Person person;
 	String name;
+	private List<SmartDevice> Appareil = new ArrayList<SmartDevice>();
 	
+	public Home() {
+		this.Appareil=new ArrayList<SmartDevice>();
+	}
+	public Home(double taille,int nbpieces,Person person, String name) {
+		this.taille= taille;
+		this.person= person;
+		this.name=name;
+		this.Appareil=new ArrayList<SmartDevice>();
+	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	private List<SmartDevice> Appareil = new ArrayList<SmartDevice>();
+	
 	
 	public double getTaille() {
 		return taille;
